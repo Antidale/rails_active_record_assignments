@@ -4,8 +4,12 @@ one:
   make: MyString
   model: MyString
   year: 1
+  price: 5.55
 
 two:
   make: MyString
   model: MyString
   year: 1
+  price: 6.66
+
+
