@@ -2,10 +2,10 @@
 
 one:
   make: MyString
-  modle: MyString
+  model: MyString
   year: 1
 
 two:
   make: MyString
-  modle: MyString
+  model: MyString
   year: 1

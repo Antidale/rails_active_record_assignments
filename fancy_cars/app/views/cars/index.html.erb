@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Make</th>
-      <th>Modle</th>
+      <th>Model</th>
       <th>Year</th>
       <th colspan="3"></th>
     </tr>
@@ -16,7 +16,7 @@
     <% @cars.each do |car| %>
       <tr>
         <td><%= car.make %></td>
-        <td><%= car.modle %></td>
+        <td><%= car.model %></td>
         <td><%= car.year %></td>
         <td><%= link_to 'Show', car %></td>
         <td><%= link_to 'Edit', edit_car_path(car) %></td>
