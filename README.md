@@ -1,0 +1,1 @@
+# rails_active_record_assignments
