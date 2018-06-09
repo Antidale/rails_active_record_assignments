@@ -3,4 +3,8 @@ class Person < ActiveRecord::Base
   has_many :jobs, dependent: :destroy
   has_and_belongs_to_many :hobbies
   has_many :approximate_salaries, through: :jobs, source: :salary_range
+
+  def max_salary
+    approximate_salaries.maximum(:max_salary)
+  end
 end
