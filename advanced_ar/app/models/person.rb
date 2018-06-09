@@ -10,4 +10,5 @@ class Person < ActiveRecord::Base
 
   scope :ordered_by_age , -> { order age: :desc}
   scope :starts_with, -> (starting_string){ where("first_name LIKE ?", "#{starting_string}%")}
+  scope :first_names, -> {pluck :first_name}
 end
