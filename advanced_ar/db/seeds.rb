@@ -1,6 +1,4 @@
 Person.destroy_all
-PersonalInfo.destroy_all
-Job.destroy_all
 
 (1..10).each do
   person = Person.create!(
