@@ -1,4 +1,5 @@
 Person.destroy_all
+Hobby.destroy_all
 
 (1..10).each do
   person = Person.create!(
@@ -8,6 +9,8 @@ Person.destroy_all
     pass: Faker::Internet.password(5,15)
   )
 
+  hobbies = Hobby.create! [
+    {name: "hiking"}, {name: "running"}, {name: "board games"}, {name: "reading"}, {name: "baking"}, {name: "knitting"}, {name: "basketball"}, {name: "coding"}, {name: "writing"}, {name: "cooking"}]
 
   person.create_personal_info(
     height: Faker::Number.between(60,80),
@@ -30,4 +33,5 @@ Person.destroy_all
     }
   ]
 
+  person.hobbies << hobbies.sample(3)
 end
