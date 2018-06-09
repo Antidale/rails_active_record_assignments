@@ -17,7 +17,7 @@ Hobby.destroy_all
     weight: Faker::Number.between(120,250)
   )
 
-  person.jobs.create! [
+  jobs = person.jobs.create! [
     {
       title: Faker::Job.title,
       company: Faker::Company.name,
@@ -32,6 +32,16 @@ Hobby.destroy_all
       position_id: Faker::Number.between(1,100)
     }
   ]
+
+  jobs.each do | job |
+    min_salary = Faker::Number.number(5).to_f
+    max_salary = min_salary + Faker::Number.number(4).to_f
+    puts max_salary
+    job.create_salary_range(
+      min_salary: min_salary,
+      max_salary: max_salary
+    )
+    end
 
   person.hobbies << hobbies.sample(3)
 end
