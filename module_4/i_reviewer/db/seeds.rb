@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Book.destroy_all
 
-Book.create! [
+books = Book.create! [
   { name: "Iain M. Banks", author: "Matter" },
   { name: "Ha'penny", author: "Jo Walton"},
   { name: "Every Heart a Doorway", author: "Seanan McGuire"},
@@ -15,3 +15,22 @@ Book.create! [
   { name: "Pattern Recognition", author: "William Gibson"},
   { name: "A Song for Arbonne", author: "Guy Gavriel Kay"}
 ]
+
+books.each do | book |
+
+  book.notes.create! [
+    {
+      title: "A great #{Faker::Book.genre.downcase}!",
+      note: Faker::Lorem.paragraph(2)
+    },
+    {
+      title: "An okay #{Faker::Book.genre.downcase}!",
+      note: Faker::Lorem.sentence(2)
+    },
+    {
+      title: "A terrible #{Faker::Book.genre.downcase}!",
+      note: Faker::Lorem.paragraph(1)
+    },
+  ]
+
+end
