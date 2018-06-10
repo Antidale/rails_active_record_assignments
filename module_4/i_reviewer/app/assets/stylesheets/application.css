@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+.book {
+  background-color: #ebccff;
+  text-shadow: 5px;
+  font-size: 30px;
+}
+
+.field {
+  margin: 10px;
+}
+
+a {
+  font-size: 12px;
+  text-decoration: none;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.note-title {
+  margin-top: 15px;
+  padding-top: 15px;
+  font-size: 20px;
+}
