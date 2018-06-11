@@ -36,8 +36,8 @@ books.each do | book |
 end
 
 reviewers = Reviewer.create! [
-  { name: Faker::Name.name, password: Faker::Internet.password(10, 70) },
-  { name: Faker::Name.name, password: Faker::Internet.password(10, 70) }
+  { name: "orange", password: "cat_stuff" },
+  { name: "stumpy", password: "cat_stuff" }
 ]
 
 books.each do | book |
