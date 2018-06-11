@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Reviewer.destroy_all
 Book.destroy_all
 
 books = Book.create! [
@@ -21,16 +22,25 @@ books.each do | book |
   book.notes.create! [
     {
       title: "A great #{Faker::Book.genre.downcase}!",
-      note: Faker::Lorem.paragraph(2)
+      note: Faker::Lorem.paragraph(2, true, 5)
     },
     {
       title: "An okay #{Faker::Book.genre.downcase}!",
-      note: Faker::Lorem.sentence(2)
+      note: Faker::Lorem.sentence(2, true, 3)
     },
     {
       title: "A terrible #{Faker::Book.genre.downcase}!",
-      note: Faker::Lorem.paragraph(1)
+      note: Faker::Lorem.paragraph(1, true, 6)
     },
   ]
+end
 
+reviewers = Reviewer.create! [
+  { name: Faker::Name.name, password: Faker::Internet.password(10, 70) },
+  { name: Faker::Name.name, password: Faker::Internet.password(10, 70) }
+]
+
+books.each do | book |
+  book.reviewer = reviewers.sample
+  book.save!
 end
