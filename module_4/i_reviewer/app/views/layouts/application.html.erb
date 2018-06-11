@@ -7,6 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%# user section of theoretical navbar %>
+<% if logged_in? %>
+  <div class="user-pane">
+    Hi <%= current_user.name %>
+    <%= link_to "Logout", logout_path, method: :delete%>
+  </div>
+<% end %>
+
+<!-- generic alert code -->
 <% flash.each do |k, v|%>
   <p id='<%= k %>'><%= v %></p>
 <% end %>

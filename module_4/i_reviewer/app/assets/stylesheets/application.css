@@ -44,3 +44,17 @@ h1 {
   box-sizing: border-box;
 
 }
+
+.user-pane {
+  float: right;
+}
+
+#notice {
+  background: lightgreen;
+  color: forestgreen;
+}
+
+#alert {
+  background-color: lightcoral;
+  color: firebrick;
+}

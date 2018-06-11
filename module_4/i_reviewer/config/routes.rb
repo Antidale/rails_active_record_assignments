@@ -9,5 +9,5 @@ Rails.application.routes.draw do
 
   root to: "books#index"
   get "/login" => "sessions#new", as: "login"
-  get "/logout" => "sessions#destroy", as: "logout"
+  delete "/logout" => "sessions#destroy", as: "logout"
 end
